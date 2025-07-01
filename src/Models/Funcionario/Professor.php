@@ -4,7 +4,9 @@
  * Especialização da classe Funcionario, adiciona a disciplina e as turmas que o professor ministra.
  */
 
-namespace Funcionario;
+namespace App\Models\Funcionario;
+
+use App\Models\Funcionario\Funcionario;
 
 class Professor extends Funcionario
 {

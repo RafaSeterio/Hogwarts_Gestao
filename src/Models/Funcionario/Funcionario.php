@@ -5,19 +5,21 @@
  * Armazena informações como nome, cargo e turno de trabalho.
  */
 
-namespace Funcionario;
+namespace App\Models\Funcionario;
 
 class Funcionario
 {
     protected string $nome;
     protected string $cargo;
     protected string $turno;
+    protected string $email;
 
-    public function __construct(string $nome, string $cargo, string $turno)
+    public function __construct(string $nome, string $cargo, string $turno, string $email)
     {
         $this->nome = $nome;
         $this->cargo = $cargo;
         $this->turno = $turno;
+        $this->email = $email;
     }
 
     public function getNome(): string
@@ -38,5 +40,13 @@ class Funcionario
     public function setTurno(string $turno): void
     {
         $this->turno = $turno;
+    }
+     public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+    public function getEmail(): string
+    {
+    return $this->email;
     }
 }

@@ -1,97 +1,150 @@
-# 🐘 PHP POO Skeleton
+Módulo 1 – Convite e Cadastro de Alunos
+Responsável: Rafaela
 
-[![PHP Version](https://img.shields.io/badge/php-8.1%2B-blue)](https://www.php.net/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Composer](https://img.shields.io/badge/Autoload-PSR--4-orange)](https://getcomposer.org/doc/04-schema.md#autoload)
+Objetivo
+Este módulo é responsável por gerenciar o processo de entrada dos alunos em Hogwarts. Inclui o envio de convites e o cadastro inicial no sistema.
 
----
+Funcionalidades
+Envio e validação de convites para novos alunos.
 
-## 🇧🇷 Português
+Cadastro com dados pessoais (nome, idade, origem mágica etc.).
 
-Projeto base em PHP 8+ para uso em atividades da disciplina de **POO — Programação Orientada a Objetos**.  
-Ideal para estudantes dos cursos de **Análise e Desenvolvimento de Sistemas**, **Ciência da Computação** e **Engenharia de Software**.  
-Utiliza Composer e Autoload PSR-4 para ensinar boas práticas de organização e estruturação de código orientado a objetos.
+Interface para padronizar o uso das classes.
 
-### ✅ Estrutura
-```
-php-poo-skeleton/
-├── composer.json
-├── .gitignore
-├── README.md
-├── src/
-│   └── Model/
-│       └── Example.php
-└── app.php
-```
+Regras de negócio no CadastroService.
 
-### 🚀 Como Usar
+Classes
+Aluno.php – Representa o aluno com seus atributos e métodos.
 
-1. Clone o projeto:
+Convite.php – Responsável pela criação e envio de convites.
 
-```
-git clone https://github.com/angelomesquita/php-poo-skeleton.git
-cd php-poo-skeleton
-```
-2. Instalação
-```
-composer install
-composer dump-autoload
-```
+CadastroService.php – Lógica para validar e cadastrar alunos.
 
-3. Execute o arquivo `app.php`
-```
-php app.php
-```
-4. Você verá:
-```
-Hi, OOP World in PHP!
-```
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+AlunoInterface.php – Interface implementada pela classe Aluno.
 
 
-## 🇺🇸 English
+Módulo 2 – Seleção de Casas
+Responsável: Giovanna
 
-This is a PHP 8+ skeleton project designed for Object-Oriented Programming (OOP) classes.
-It serves as a base for practical exercises in Systems Analysis and Development, Computer Science, and Software Engineering courses.
-Composer and PSR-4 Autoload are used to teach best practices in modern PHP application development.
+Objetivo
+Este módulo automatiza o processo de Seleção das Casas em Hogwarts, realizando a análise das características dos alunos e associando-os à casa mais compatível por meio do Chapéu Seletor.
 
-### ✅ Structure
-```
-php-poo-skeleton/
-├── composer.json
-├── .gitignore
-├── README.md
-├── src/
-│   └── Model/
-│       └── Example.php
-└── app.php
-```
+Funcionalidades
+Registro das quatro casas de Hogwarts com suas respectivas características.
 
-### 🚀 How to use
+Avaliação das características do aluno.
 
-1. Clone the project:
+Seleção automática da casa ideal usando regras de compatibilidade.
 
-```
-git clone https://github.com/angelomesquita/php-poo-skeleton.git
-cd php-poo-skeleton
-```
-2. Install Composer autoloader
-```
-composer install
-composer dump-autoload
-```
+Aplicação de polimorfismo no comportamento do Chapéu Seletor.
 
-3. Run the file `app.php`
-```
-php app.php
-```
-4. You will see:
-```
-Hi, OOP World in PHP!
-```
-## License
+Classes
+Casa.php – Representa uma casa de Hogwarts com nome, características e pontos.
 
-This project is licensed under the MIT License—see the [LICENSE](LICENSE) file for details.
+Selecionador.php – Responsável por intermediar a seleção, utilizando o chapéu seletor.
+
+ChapeuSeletor.php – Define a lógica de escolha da casa com base em compatibilidade de características (polimorfismo).
+
+Módulo 3 – Gerenciamento de Torneios e Competições
+Responsável: Leonardo 
+
+Objetivo
+Este módulo é responsável por automatizar o gerenciamento dos Torneios internos (como o Torneio Tribruxo e a Copa das Casas), organizando inscrições, desafios e pontuações.
+
+Funcionalidades
+Cadastro de torneios com período, local e descrição.
+Criação de competições com regras.
+Inscrição de alunos por casa (Grifinória, Sonserina, Corvinal, Lufa-Lufa) ou escolas diferentes.
+Registro de resultados individuais por competição.
+Cálculo automático de pontuação das casas.
+Geração de rankings de pontuação em tempo real.
+
+
+Classes
+AlunoCompeticao.php - Representa o aluno em competições, implementa AlunoInterface (nome, email, nascimento) e adiciona atributo casa e controle de pontuação.
+
+Competicao.php - Modela uma competição específica.
+
+Torneio.php - Agrupa competições e inscritos.
+
+Inscricao.php - Vincula aluno a torneio.
+
+Ranking.php - Gera resultados e relatórios.
+
+TorneioService.php - Coordena todas as operações.
+
+
+
+Módulo 4 – Controle Acadêmico e Disciplinar
+Responsável: Rafaela
+
+Objetivo
+Este módulo trata do desempenho acadêmico dos alunos, além de registrar advertências disciplinares.
+
+Funcionalidades
+Cadastro de disciplinas.
+
+Registro de avaliações e notas.
+
+Emissão de advertências.
+
+Criação de histórico acadêmico.
+
+Classes
+Disciplina.php – Representa uma disciplina/matéria.
+
+Avaliacao.php – Armazena informações de avaliações e notas.
+
+Advertencia.php – Registra penalidades disciplinares.
+
+RegistroAcademico.php – Guarda o histórico acadêmico do aluno.
+
+Módulo 5 – Gerenciamento de Professores e Funcionários
+Responsável: Giovanna
+
+ Objetivo
+Este módulo centraliza o cadastro e gerenciamento dos profissionais de Hogwarts, como professores e demais funcionários, facilitando a organização por turno, disciplina e turmas.
+
+ Funcionalidades
+Cadastro de professores com suas respectivas disciplinas e turmas.
+
+Cadastro de outros funcionários com seus cargos e turnos.
+
+Listagem de todos os profissionais registrados.
+
+Busca de funcionário pelo nome.
+
+Uso de herança entre Funcionario e Professor.
+
+Classes
+Funcionario.php – Classe base que representa qualquer funcionário de Hogwarts.
+
+Professor.php – Herda de Funcionario e adiciona disciplina e turmas.
+
+RHService.php – Serviço responsável pelo cadastro, listagem e busca de funcionários.
+
+Módulo 6 – Sistema de Alertas e Comunicação
+Responsável: Wendles
+
+Objetivo
+Este módulo é responsável por gerenciar o envio de notificações e alertas para os usuários do sistema (alunos, professores e coordenadores), garantindo uma comunicação eficaz sobre eventos, mudanças, resultados e lembretes importantes.
+
+Funcionalidades
+Cadastro de tipos de alerta (urgente, informativo, lembrete).
+
+Envio de mensagens segmentadas por perfil (aluno, professor, casa, escola, etc.).
+
+Integração com eventos do sistema (ex: resultados de competições, mudanças em aulas, novos anúncios).
+
+Histórico de mensagens enviadas.
+
+Confirmação de leitura por parte dos usuários.
+
+Agendamento de alertas para envio futuro.
+
+Classes
+Alerta.php – Representa um alerta individual com tipo, título, mensagem, data de envio e status de leitura.
+
+UsuarioMensagem.php – Modela o vínculo entre um usuário e uma mensagem recebida, permitindo controle individual de leitura.
+
+ComunicacaoService.php – Gerencia o envio de alertas e mensagens, incluindo lógica de segmentação e agendamento.
