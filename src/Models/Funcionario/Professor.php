@@ -13,9 +13,14 @@ class Professor extends Funcionario
     private string $disciplina;
     private array $turmas;
 
-    public function __construct(string $nome, string $turno, string $disciplina, array $turmas)
-    {
-        parent::__construct($nome, 'Professor', $turno);
+    public function __construct(
+        string $nome,
+        string $turno,
+        string $disciplina,
+        array $turmas,
+        string $email // ← Adiciona o e-mail aqui
+    ) {
+        parent::__construct($nome, 'Professor', $turno, $email); // ← Corrige aqui também
         $this->disciplina = $disciplina;
         $this->turmas = $turmas;
     }
