@@ -1,5 +1,5 @@
 Módulo 1 – Convite e Cadastro de Alunos
-Responsável: Rafaela
+Responsável: Rafaela Setério Silva
 
 Objetivo
 Este módulo é responsável por gerenciar o processo de entrada dos alunos em Hogwarts. Inclui o envio de convites e o cadastro inicial no sistema.
@@ -24,7 +24,7 @@ AlunoInterface.php – Interface implementada pela classe Aluno.
 
 
 Módulo 2 – Seleção de Casas
-Responsável: Giovanna
+Responsável: Giovanna Katherine
 
 Objetivo
 Este módulo automatiza o processo de Seleção das Casas em Hogwarts, realizando a análise das características dos alunos e associando-os à casa mais compatível por meio do Chapéu Seletor.
@@ -76,7 +76,7 @@ TorneioService.php - Coordena todas as operações.
 
 
 Módulo 4 – Controle Acadêmico e Disciplinar
-Responsável: Rafaela
+Responsável: Rafaela Setério Silva
 
 Objetivo
 Este módulo trata do desempenho acadêmico dos alunos, além de registrar advertências disciplinares.
