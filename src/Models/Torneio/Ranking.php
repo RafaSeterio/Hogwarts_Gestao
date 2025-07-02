@@ -22,7 +22,7 @@ class Ranking {
     }
 
     private function atualizarRankings(): void {
-        $this->rankingCasas = ['Grifinória' => 0, 'Sonserina' => 0, 'Corvinal' => 0, 'Lufa-Lufa' => 0, 'Beauxbatons' => 0, 'Durmstrang' => 0];
+        $this->rankingCasas = ['Grifinória' => 0, 'Sonserina' => 0, 'Corvinal' => 0, 'Lufa-Lufa' => 0];
         $this->rankingAlunos = [];
 
         foreach ($this->inscricoes as $inscricao) {
@@ -59,10 +59,10 @@ class Ranking {
             $output .= sprintf("%d. %-10s: %4d pontos\n", $posicao++, $casa, $pontos);
         }
 
-        $output .= "\nTop 3 Alunos:\n";
+        $output .= "\nTop 5 Alunos:\n";
         $contador = 0;
         foreach ($this->rankingAlunos as $dados) {
-            if (++$contador > 3) break;
+            if (++$contador > 5) break;
             $output .= sprintf("%d. %-20s (%-9s): %4d pontos\n", 
                 $contador, 
                 $dados['aluno']->getNome(), 
